@@ -7,7 +7,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: baseline;
-    font-family: FreeMono, monospace
+    font-family: FreeMono, monospace;
+    background-image: url(images/bg-table.jpg);
+    background-size: cover;
 }
 
 .calcContainer{
@@ -16,12 +18,10 @@ body{
     background: rgb(59,58,58);
     background: linear-gradient(323deg, rgb(102, 102, 102) 0%, rgb(165, 165, 165) 35%, rgb(192, 192, 192) 100%);
     border-radius: 10px;
-    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.75);
 }
 
-
-
-.screen{
+#screen{
     display:flex;
     justify-content: flex-end;
     background: rgb(36,88,26);
@@ -34,8 +34,8 @@ body{
     font-size: 20pt;
 }
 
-.screen p{
-    margin: 20px;
+#screen p{
+    margin: 15px;
 }
 
 .logo{
@@ -60,10 +60,10 @@ body{
 
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
+    grid-gap: 10px 10px;
 
     box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.5);
 
-    gap: 5px;
     padding: 5px;
     margin: 10px;
 }
@@ -76,8 +76,10 @@ body{
     border-radius: 5px;
     width: 4rem;
     height: 4rem;
+    padding: 0px;
     font-size: 20pt;
     transition: 0.1s ease-in-out;
+    user-select: none;
 }
 .calcButton:active{
     transform: scale(0.98);
@@ -94,10 +96,13 @@ body{
 #equals{
     grid-column-start: 3;
     grid-column-end: 5;
-    width: 8rem;
 }
 #zero{
     grid-column-start: 2;
     grid-column-end: 4;
-    width: 8rem;
+    
+}
+.double{
+    width:100%;
+
 }
