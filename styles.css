@@ -1,0 +1,92 @@
+
+
+body{
+    width: 100%;
+    height:max-content;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    font-family: FreeMono, monospace
+}
+
+.calcContainer{
+    display:flex;
+    flex-direction: column;
+    background: rgb(59,58,58);
+    background: linear-gradient(323deg, rgb(102, 102, 102) 0%, rgb(165, 165, 165) 35%, rgb(192, 192, 192) 100%);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+
+.screen{
+    display:flex;
+    justify-content: flex-end;
+    background: rgb(36,88,26);
+    background: linear-gradient(323deg, rgba(36,88,26,0.6530987394957983) 0%, rgba(53,142,43,0.6671043417366946) 35%, rgba(44,158,26,0.639093137254902) 100%);
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.5);
+
+    font-variant-numeric: slashed-zero;
+    font-size: 20pt;
+}
+
+.screen p{
+    margin: 20px;
+}
+
+.logo{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin: 0px;
+    margin-right: 20px;
+    padding: 0px;
+    gap: 0px;
+    font-size: 15pt;
+    
+}
+.logo p{
+    margin: 5px;
+    font-style: italic;
+}
+
+.buttonContainer{
+    display:grid;
+    justify-items: center;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.5);
+
+    gap: 5px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.calcButton{
+    background: rgb(134, 134, 134);
+    background: linear-gradient(323deg, rgb(134, 134, 134) 0%, rgb(185, 185, 185) 35%, rgb(216, 216, 216) 100%);
+    box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.75);
+    border: none;
+    border-radius: 5px;
+    width: 4rem;
+    height: 4rem;
+    font-size: 20pt;
+    transition: 0.1s ease-in-out;
+}
+.calcButton:active{
+    transform: scale(0.98);
+    box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.75);
+}
+.operator{
+    background: rgb(118, 116, 255);
+    background: linear-gradient(323deg, rgb(58, 57, 128) 0%, rgb(93, 91, 204) 35%, rgb(114, 111, 248) 100%);
+}
+#equals{
+    background: rgb(243, 61, 61);
+    background: linear-gradient(323deg, rgb(150, 37, 37) 0%, rgb(202, 50, 50) 35%, rgb(247, 62, 62) 100%);
+}
