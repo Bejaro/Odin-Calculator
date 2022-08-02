@@ -59,6 +59,7 @@ body{
     justify-items: center;
 
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
 
     box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.5);
 
@@ -86,7 +87,17 @@ body{
     background: rgb(118, 116, 255);
     background: linear-gradient(323deg, rgb(58, 57, 128) 0%, rgb(93, 91, 204) 35%, rgb(114, 111, 248) 100%);
 }
-#equals{
+.command{
     background: rgb(243, 61, 61);
     background: linear-gradient(323deg, rgb(150, 37, 37) 0%, rgb(202, 50, 50) 35%, rgb(247, 62, 62) 100%);
+}
+#equals{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    width: 8rem;
+}
+#zero{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    width: 8rem;
 }
