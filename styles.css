@@ -24,9 +24,11 @@ body{
 #screen{
     display:flex;
     justify-content: flex-end;
+    align-items: center;
     background: rgb(36,88,26);
     background: linear-gradient(323deg, rgba(36,88,26,0.6530987394957983) 0%, rgba(53,142,43,0.6671043417366946) 35%, rgba(44,158,26,0.639093137254902) 100%);
     margin: 10px;
+    height: 4rem;
     border-radius: 10px;
     box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.5);
 
