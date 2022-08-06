@@ -13,9 +13,6 @@ buttons.forEach (function (button){
 });
 
 function buttonClicked(clicked){
-    if (awaitingOperation = true){
-
-    }
     if (this.id == 'allclear'){
         allClear();
         return;
@@ -24,21 +21,21 @@ function buttonClicked(clicked){
         clear();
         return;
     }
-    if (this.classList.contains('digit') && (workingValue.length <= maxDigits)){
-        currentValue.push(this.innerHTML);
-        workingValue.push(this.innerHTML);
-        displayContent.innerHTML = currentValue.join("");
-        if (currentValue.length > maxDigits) currentValue.length = maxDigits;
-
-        reportToConsole()
-        return;
-    }
     if (this.classList.contains('operator')){
         currentValue.push(this.innerHTML);
         displayContent.innerHTML = currentValue.join("");
 
         storedValue = workingValue;
         awaitingOperation = true;
+
+        reportToConsole()
+        return;
+    }
+    if (this.classList.contains('digit') && (workingValue.length <= maxDigits)){
+        currentValue.push(this.innerHTML);
+        workingValue.push(this.innerHTML);
+        displayContent.innerHTML = currentValue.join("");
+        if (currentValue.length > maxDigits) currentValue.length = maxDigits;
 
         reportToConsole()
         return;
