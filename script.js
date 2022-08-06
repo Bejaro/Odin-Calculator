@@ -18,18 +18,20 @@ function buttonClicked(clicked){
     }
     if (this.id == 'allclear'){
         allClear();
-        //return;
+        return;
     }
     if (this.id == 'clear'){
         clear();
-        //return;
+        return;
     }
     if (this.classList.contains('digit') && (workingValue.length <= maxDigits)){
         currentValue.push(this.innerHTML);
         workingValue.push(this.innerHTML);
         displayContent.innerHTML = currentValue.join("");
         if (currentValue.length > maxDigits) currentValue.length = maxDigits;
-        //return;
+
+        reportToConsole()
+        return;
     }
     if (this.classList.contains('operator')){
         currentValue.push(this.innerHTML);
@@ -37,12 +39,20 @@ function buttonClicked(clicked){
 
         storedValue = workingValue;
         awaitingOperation = true;
-        //return;
+
+        reportToConsole()
+        return;
     }
     if (this.classList.contains('equals')){
         operate();
-        //return;
+
+        reportToConsole()
+        return;
     }
+    
+}
+
+function reportToConsole(){
     console.log("");
     console.log("Click: " + this.id);
     console.log("Current: " + currentValue.join(""));
