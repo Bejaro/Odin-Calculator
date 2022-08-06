@@ -13,6 +13,9 @@ buttons.forEach (function (button){
 });
 
 function buttonClicked(clicked){
+    console.log("");
+    console.log("Click: " + this.id);
+    console.log(this.classList);
     if (this.id == 'allclear'){
         allClear();
         return;
@@ -50,8 +53,6 @@ function buttonClicked(clicked){
 }
 
 function reportToConsole(){
-    console.log("");
-    console.log("Click: " + this.id);
     console.log("Current: " + currentValue.join(""));
     console.log("Working: " + workingValue.join(""));
     console.log("Stored: " + storedValue.join(""));
