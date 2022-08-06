@@ -55,6 +55,9 @@ function buttonClicked(clicked){
         return;
     }
     if (this.classList.contains('digit') && (workingValue.length <= maxDigits)){
+            if (this.id == decimal && currentValue.includes(".")){
+                return;
+            }
         currentValue.push(this.innerHTML);
         workingValue.push(this.innerHTML);
         displayContent.innerHTML = currentValue.join("");
