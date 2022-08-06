@@ -129,7 +129,13 @@ function reportAnswer(){
 }
 
 function clear(){
-    currentValue.length = operatorLength;
+    if ((currentValue.includes("+")) || (currentValue.includes("-")) || (currentValue.includes("x")) || (currentValue.includes("÷")) ){
+        currentValue.length = operatorLength;
+    }
+    
+    else{
+        currentValue.length = 0;
+    }
     workingValue = Array.from(String(answer));
     displayContent.innerHTML = currentValue.join("")
 }
