@@ -102,6 +102,17 @@ function operate(){
         const num2 = +workingValue.join("");
         answer = num1 / num2;
     }
+    round(answer);
+
+}
+
+function round(num) {
+    var m = Number((Math.abs(num) * 100).toPrecision(15));
+    answer = Math.round(m) / 100 * Math.sign(num);
+    reportAnswer();
+}
+
+function reportAnswer(){
 
     //Report on screen
     displayContent.innerHTML = answer;
