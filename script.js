@@ -1,31 +1,66 @@
 let displayContent = document.getElementById('screenContent');
-let currentValue = ["Calculator by Ben Rose"];
-if (currentValue.length > 15) currentValue.length = 15;
+let currentValue = []; //What is currently displayed on screen, including operators
+let workingValue = []; //Currently selected numbers only, no operators
+let storedValue = []; //Stored when an operator is selected
+
+let awaitingOperation = false; //Boolean to disallow multiple operators in one line
+
+const maxDigits = 14; //Maximum number of digits
 
 const buttons = document.querySelectorAll('.calcButton');
 buttons.forEach (function (button){
     button.addEventListener('click', buttonClicked);
 });
 
-const numberButtons = document.querySelectorAll('.digit');
-
-for (var i = 0; i < numberButtons.length; i++) {     
-};
-
 function buttonClicked(clicked){
-    console.log("Click: " + this.id);
-    if (this.id == 'allclear'){
-        clearScreen();
-        return;
+    if (awaitingOperation = true){
+
     }
-    if (this.classList.contains('digit')){
+    if (this.id == 'allclear'){
+        allClear();
+        //return;
+    }
+    if (this.id == 'clear'){
+        clear();
+        //return;
+    }
+    if (this.classList.contains('digit') && (workingValue.length <= maxDigits)){
+        currentValue.push(this.innerHTML);
+        workingValue.push(this.innerHTML);
+        displayContent.innerHTML = currentValue.join("");
+        if (currentValue.length > maxDigits) currentValue.length = maxDigits;
+        //return;
+    }
+    if (this.classList.contains('operator')){
         currentValue.push(this.innerHTML);
         displayContent.innerHTML = currentValue.join("");
-        return;
+
+        storedValue = workingValue;
+        awaitingOperation = true;
+        //return;
     }
+    if (this.classList.contains('equals')){
+        operate();
+        //return;
+    }
+    console.log("");
+    console.log("Click: " + this.id);
+    console.log("Current: " + currentValue.join(""));
+    console.log("Working: " + workingValue.join(""));
+    console.log("Stored: " + storedValue.join(""));
+    console.log("Awaiting: " + awaitingOperation)
 }
 
-function clearScreen(){
+function clear(){
     displayContent.innerHTML = "";
     currentValue.length = 0;
+    workingValue.length = 0;
+}
+
+function allClear(){
+    displayContent.innerHTML = "";
+    currentValue.length = 0;
+    storedValue.length = 0;
+    workingValue.length = 0;
+    awaitingOperation = false;
 }
